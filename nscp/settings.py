@@ -45,7 +45,7 @@ SECRET_KEY = get_secret('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['46.101.237.155', 'nscp.dk', 'www.nscp.dk']
 
 
 # Application definition
@@ -96,10 +96,14 @@ WSGI_APPLICATION = 'nscp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
+DDATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': get_secret('DATABASE_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
