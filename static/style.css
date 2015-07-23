@@ -19,6 +19,30 @@ a:active {
     text-decoration: underline;
 }
 
+p a:link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+p a:visited {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
+}
+
+p a:active {
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
+}
+
 h1 {
     color: black;
     font-family: arial, 'Trocchi', serif;
@@ -26,6 +50,16 @@ h1 {
     font-weight: normal;
     line-height: 48px;
     margin: 0;
+}
+
+h1.site_title {
+    color: black;
+    font-family: arial, 'Trocchi', serif;
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 48px;
+    margin: 0;
+    padding-bottom: 20px;
 }
 
 h2 {
@@ -46,6 +80,18 @@ p {
     margin-bottom: 15px;
 }
 
+ul.courses {
+    padding: 10px;
+}
+
+li.courses {
+    color: #333333;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    list-style-type: none;
+}
+
 .menu_item a {
     color: white;
 }
@@ -57,7 +103,10 @@ p {
 }
 
 .theme_color {
-    background-color: #93A5A8;
+    !background-color: #93A5A8;
+    !background-color: #C1DEB4;
+    background-color: #78B1CA;
+    !background-color: #C9DFE9;
 }
 
 #header {
@@ -69,10 +118,17 @@ p {
 #header_logo_container {
     float: right;
     height:100px;
-    background-color: red;
+    width: auto;
+    background-color: none;
     margin: 10px 10px 0px 0;
     padding: 0 0 0 0;
-    border: 1px solid black;
+}
+
+#logo {
+    height: 100%;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
 }
 
 #menu_container {

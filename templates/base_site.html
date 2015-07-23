@@ -3,48 +3,64 @@
 <head lang="en">
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    {% block head_block %}{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=0.7" charset="UTF-8">
+    <meta name="google-site-verification" content="9V3Kuh9VWB8dDvM0huO1H0Wpm3N20oRbjAXmFvK8kG4" />
     <title>NSCP Software</title>
 </head>
 <body>
 <div id="main_frame" class="theme_color">
     <div id="header">
         <div id="header_logo_container">
-            <img src="{% static 'logo.png' %}">
+            <a href="/"><img src="{% static 'nscp_logo.png' %}" id="logo"></a>
         </div>
     </div>
 
     <div id="menu_container">
         <div class="menu_item">
-            <a href="">About</a>
+            <a href="{% url 'about' %}">About</a>
         </div>
         <div class="menu_item">
-            <a href="">Github</a>
+            <a href="{% url 'news' %}">News</a>
         </div>
         <div class="menu_item">
-            <a href="">Projects</a>
+            <a href="{% url 'projects' %}">Projects</a>
         </div>
         <div class="menu_item">
-            <a href="">Curriculum Vitae</a>
+            <a href="{% url 'cv' %}">Curriculum Vitae</a>
         </div>
         <div class="menu_item">
-            <a href="">Contact</a>
+            <a href="{% url 'contact' %}">Contact</a>
         </div>
     </div>
     <hr class="rule_top_bottom" />
     <div id="content" class="theme_color">
-        {% block main_content %}{% endblock %}
-        <h1>This is a section</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum finibus turpis, semper aliquet sapien imperdiet sit amet. Sed ac orci et purus elementum fermentum. Praesent vel porta turpis. Proin nec tempor nisi. Donec tellus sapien, lobortis sed turpis vel, blandit consectetur ante. Maecenas blandit blandit consequat. Aliquam et lacinia lorem. Aenean viverra ut neque a lacinia. Suspendisse potenti. Suspendisse molestie odio ac imperdiet imperdiet. Mauris iaculis arcu in sapien fringilla, eget mollis velit malesuada. Etiam ultricies euismod ante a rutrum. Pellentesque cursus, urna vitae varius tincidunt, felis tellus iaculis nunc, vitae molestie odio magna ut massa.</p>
-        <h2>This is a subsection</h2>
-        <p>Curabitur rhoncus, sapien sit amet tristique elementum, lacus nulla congue est, nec elementum neque purus ut est. Maecenas tristique libero mauris, eget elementum sapien porta eget. Etiam vulputate mi lacus, ac vehicula nibh vulputate at. Aenean in tempor mi. Aliquam vitae molestie nunc. Morbi nec lectus finibus risus egestas fringilla. Duis eu augue arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus sit amet tempus neque. Nunc placerat odio quis massa sodales finibus. Quisque in ante urna. Nunc nulla risus, efficitur nec vulputate sed, hendrerit nec ligula. Nunc dictum efficitur mauris, in tristique ante dapibus at. Praesent sit amet nulla bibendum libero consectetur elementum.</p>
+        {% block main_content %}
+        <p>
+            This is my website. It tells you something <a href="{% url 'about' %}">about</a> me.
+            I'm a student at the IT-University of Copenhagen where I study Software Development and
+            Technology.
+        </p>
+        <p>
+            From time to time I post <a href="news">news</a> about me, or something I've accomplished.
+        </p>
+        <p>
+            I also publish the <a href="{% url 'projects' %}">projects</a> I have written in Java and Python. There are also links to github sometimes!
+        </p>
+        <p>
+            I have made my <a href="cv">CV</a> available. It contains my employment history and other
+            information of professional interest.
+        </p>
+        <p>
+            Last, but not least I have posted my <a href="">contact information</a>, so feel free to
+            write to me if you have questions regarding me, my projects and my work.
+        </p>
+        {% endblock %}
     </div>
     <hr class="rule_top_bottom" />
     <div id="footer" class="theme_color">
         <div id="footer_content">Niels Pedersen @ NSCP Software</div>
     </div>
 </div>
-
-
 </body>
 </html>

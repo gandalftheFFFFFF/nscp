@@ -1,0 +1,23 @@
+{% extends 'base_site.html' %}
+{% block main_content %}
+{% if projects %}
+    <h1 class="site_title">
+        Projects
+    </h1>
+    {% for project in projects %}
+        <h3>
+            {{ project.name }}
+        </h3>
+        <p>
+            {{ project.description|slice:":180" }}...
+            <a href="{% url 'specific_project' project.slug %}">(read more)</a>
+        </p>
+    {% endfor %}
+{% else %}
+    <h1>
+        No projects...
+    </h1>
+{% endif %}
+
+
+{% endblock %}

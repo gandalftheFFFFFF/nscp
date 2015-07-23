@@ -1,0 +1,17 @@
+{% extends 'base_site.html' %}
+{% block main_content %}
+{% if project %}
+    <h1 class="site_title">
+        Project: {{ project.name }}
+    </h1>
+    <p>
+        {{ project.description }}
+    </p>
+{% else %}
+    <h1>
+        Something went wrong...
+    </h1>
+{% endif %}
+
+
+{% endblock %}

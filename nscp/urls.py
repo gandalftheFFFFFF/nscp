@@ -15,10 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
-from django.views.generic.base import TemplateView
+from django.views.generic import TemplateView
+from django.conf import settings
+from django.conf.urls.static import static
+from . import views
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='base_site.html')),
+    url(r'^about/$', views.about, name='about'),
+    url(r'^news/', include('news_posts.urls')),
+    url(r'^projects/', include('project.urls')),
+    url(r'^cv/$', views.cv, name='cv'),
+    url(r'^contact/$', views.contact, name='contact'),
     url(r'^admin/', include(admin.site.urls)),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
