@@ -172,6 +172,24 @@ p {
     line-height: 170%;
 }
 
+/* STYLE ABOUT PICTURES */
+
+img.preview {
+    max-width: 50vmin;
+    max-height: 50vmin;
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+}
+
+img.thumbnail {
+    max-width: 25vmin;
+    max-height: 20vmin;
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+}
+
 
 /* STYLE SPEFCIFIC TO INDIVIDUAL PAGES */
 
@@ -210,8 +228,17 @@ p {
         li.post {
             font-family: Helvetica, sans;
             font-size: 2vmin;
-            front-weight: bold;
         }
+
+        p.centered_p {
+            text-align: center;
+        }
+
+        .picture_container {
+            text-align: center;
+        }
+
+
 
 
 

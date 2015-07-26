@@ -4,6 +4,7 @@ from collections import defaultdict
 # Create your views here.
 
 from .models import Post
+from ImageUploader.models import Image
 
 
 def news(request):
@@ -13,11 +14,16 @@ def news(request):
     except Post.DoesNotExist:
         post = None
     try:
+        images = Image.objects.filter(post=post)
+    except Image.DoesNotExist:
+        images = None
+    try:
         older_posts = Post.objects.all()[1:4]
     except Post.DoesNotExist:
         older_posts = None
     context = {
         'post':post,
+        'images':images,
         'older_posts':older_posts,
     }
     return render(request, template, context)
@@ -25,8 +31,13 @@ def news(request):
 def specific_post(request, post_slug):
     template = 'specific_news.html'
     post = get_object_or_404(Post, slug=post_slug)
+    try:
+        images = Image.objects.filter(post=post)
+    except Image.DoesNotExist:
+        images = None
     context = {
         'post':post,
+        'images':images,
     }
     return render(request, template, context)
 

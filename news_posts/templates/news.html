@@ -12,17 +12,29 @@
     <p>
         {{ post.text }}
     </p>
+    {% if images %}
+        <div class="picture_container">
+        {% if images|length > 1 %}
+            {% for image in images %}
+                <a href="{{ MEDIA_URL }}{{ image.img.url }}">
+                    <img class="thumbnail" src="{{ MEDIA_URL }}{{ image.img.url }}" alt="{{ image.name }}" />
+                </a>
+            {% endfor %}
+        {% else %}
+            <a href="{{ MEDIA_URL }}{{ images.img.url }}">
+                <img class="preview" src="{{ MEDIA_URL }}{{ images.img.url }}" alt="{{ image.name }}"/>
+            </a>
+        {% endif %}
+        </div>
+    {% endif %}
     {% if older_posts %}
         <h2>
             recent news
         </h2>
-        <ul id="older_news">
         {% for post in older_posts %}
-                <p>
-                    <a href="{% url 'specific_post' post.slug %}">{{ post.title }}</a> - {{ post.date|date:"d.m.Y" }}
-                </p>
+            <p class="centered_p"><a href="{% url 'specific_post' post.slug %}">{{ post.title }}</a> -
+            {{ post.date|date:"d.m.Y" }}</p>
         {% endfor %}
-        </ul>
     {% endif %}
     <h2>
         <a href="{% url 'archive' %}">news archive</a>
