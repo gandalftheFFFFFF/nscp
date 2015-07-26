@@ -1,0 +1,218 @@
+body {
+
+}
+
+/* MAIN FRAME */
+
+#main_frame {
+    max-width: 960px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+/* PICTURE CONTAINER */
+#picture_container {
+        border-bottom: 1px solid black;
+        padding-top: 5vmin;
+    }
+
+    #picture_top {
+        width: 100%;
+        height: auto;
+        display:block;
+    }
+
+/* MENU */
+#menu_container {
+    font-size: 1em;
+    background-color: white;
+    float: right;
+    line-height: 5vmin;
+    height: 5vmin;
+}
+
+    .menu_item {
+        display: inline;
+        padding: 2vmin;
+        font-size: 2vmin;
+    }
+
+/* ARROW CONTAINER */
+#arrow_container {
+    text-align: center;
+    padding-top: 4vmin;
+}
+
+#arrow {
+    width: 10%;
+    height: auto,
+}
+
+/* BODY CONTAINER */
+#body_container {
+    padding: 1vmin 0 1vmin 0;
+}
+
+    .menu_bait {
+        font-size: 4vmin;
+        text-align: center;
+    }
+
+    .bait_description {
+        font-size: 2vmin;
+        text-align: center;
+        padding: 0 15vmin; 0 15vmin;
+    }
+
+/* FORM CONTAINER */
+#contact_container {
+    font-size: 2vmin;
+    margin-top: 5vmin;
+}
+
+    #form_center {
+        width: 60%;
+        margin: 0 auto;
+        border: 0.2vmin solid black;
+        border-radius: 20px;
+        padding: 5%;
+        padding-bottom: 1%;
+        padding-top: 3%;
+    }
+
+    .form_element {
+
+    }
+
+    .input_text {
+        width: 25vmin;
+    }
+
+    .input_textarea {
+        width: 98%;
+        height:20vmin;
+    }
+
+    .input_text, .input_textarea {
+        font-size: 2vmin;
+        border: 1px solid gray;
+        outline: 0;
+        line-height: 3vmin;
+    }
+
+    .input_send {
+        font-size: 2vmin;
+        padding: 0.8vmin 1.3vmin 0.8vmin 1.3vmin;
+        color: white;
+        background: gray;
+        border: 0;
+    }
+
+/* FOOTER */
+#footer {
+    margin-top: 10vmin;
+    text-align: center;
+}
+
+
+/* GENERAL LINKS */
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+p a:link {
+    font-weight: bold;
+}
+
+li a {
+            font-weight: bold;
+        }
+
+
+/* TEXT GENERAL */
+
+h1, h2, h3  {
+    font-family: Helvetica, sans;
+    text-align: center;
+}
+
+h1 {
+    font-size: 5vmin;
+}
+
+h2 {
+    font-size: 3.5vmin;
+}
+
+h3 {
+    font-size: 2vmin;
+}
+
+p {
+    font-size: 2vmin;
+    padding-left: 10vmin;
+    padding-right: 10vmin;
+    font-family: Helvetica, sans;
+    line-height: 170%;
+}
+
+
+/* STYLE SPEFCIFIC TO INDIVIDUAL PAGES */
+
+    /* ABOUT */
+
+        /* UL AND LI */
+
+        ul.course_list {
+            padding-left: 15vmin;
+            padding-right: 15vmin;
+        }
+
+        li.courses {
+            font-family: Helvetica, sans;
+            font-size: 2vmin;
+        }
+
+    /* NEWS */
+
+        /* ARCHIVE H2 HEADER */
+
+        h2.archive_h2 {
+            text-align: left;
+            padding-left: 11vmin;
+            padding-bottom: 0v;
+            margin-bottom: 0;
+        }
+
+        ul.post_list {
+            padding-left: 15vmin;
+            padding-right: 15vmin;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        li.post {
+            font-family: Helvetica, sans;
+            font-size: 2vmin;
+            front-weight: bold;
+        }
+
+
+
+

@@ -4,7 +4,10 @@ from .models import Project
 
 def projects(request):
     template = 'projects.html'
-    projects = get_list_or_404(Project)
+    try:
+        projects = Project.objects.all()
+    except Project.DoesNotExist:
+        projects = None
     context = {
         'projects':projects
     }

@@ -1,0 +1,36 @@
+{% extends 'pages_template.html' %}
+<!-- blocks to fill: main_content -->
+{% block main_content %}
+{% block news_body %}
+{% if post %}
+    <h1>
+        {{ post.title }}
+    </h1>
+    <p>
+        {{ post.date|date:"d.m.Y" }}
+    </p>
+    <p>
+        {{ post.text }}
+    </p>
+    {% if older_posts %}
+        <h2>
+            recent news
+        </h2>
+        <ul id="older_news">
+        {% for post in older_posts %}
+                <p>
+                    <a href="{% url 'specific_post' post.slug %}">{{ post.title }}</a> - {{ post.date|date:"d.m.Y" }}
+                </p>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <h2>
+        <a href="{% url 'archive' %}">news archive</a>
+    </h2>
+{% else %}
+<h2>
+    Nothing to see...
+</h2>
+{% endif %}
+{% endblock %}
+{% endblock %}

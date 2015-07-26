@@ -1,0 +1,21 @@
+{% extends 'pages_template.html' %}
+
+{% block main_content %}
+<h1>
+    news archive
+</h1>
+{% if arc %}
+    {% for year, posts in arc.items %}
+        <h2 class="archive_h2">{{ year }}</h2>
+        <ul class="post_list">
+        {% for post in posts %}
+            <li class="post">{{ post.date|date:"M d" }} - <a href="{% url 'specific_post' post.slug %}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+{% else %}
+<h2>
+    I seem to have run out of news posts. Yikes!
+</h2>
+{% endif %}
+{% endblock %}

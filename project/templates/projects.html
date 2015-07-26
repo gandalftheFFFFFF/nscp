@@ -1,4 +1,4 @@
-{% extends 'base_site.html' %}
+{% extends 'pages_template.html' %}
 {% block main_content %}
 {% if projects %}
     <h1 class="site_title">
@@ -9,8 +9,10 @@
             {{ project.name }}
         </h3>
         <p>
-            {{ project.description|slice:":180" }}...
-            <a href="{% url 'specific_project' project.slug %}">(read more)</a>
+            {{ project.description|slice:":180" }}
+            {% if project.description|length > 180 %}
+            ...
+            <a href="{% url 'specific_project' project.slug %}">(read more)</a>{% endif %}
         </p>
     {% endfor %}
 {% else %}
@@ -18,6 +20,4 @@
         No projects...
     </h1>
 {% endif %}
-
-
 {% endblock %}
