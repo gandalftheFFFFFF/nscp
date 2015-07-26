@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6be2278-4e5e-4c21-9d9a-4f9fdf458a5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news_posts/admin.py" afterPath="$PROJECT_DIR$/news_posts/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base_site.html" afterPath="$PROJECT_DIR$/templates/base_site.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news_posts/templates/news.html" afterPath="$PROJECT_DIR$/news_posts/templates/news.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nscp/settings.py" afterPath="$PROJECT_DIR$/nscp/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news_posts/templates/specific_news.html" afterPath="$PROJECT_DIR$/news_posts/templates/specific_news.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/stylish.css" afterPath="$PROJECT_DIR$/static/stylish.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news_posts/views.py" afterPath="$PROJECT_DIR$/news_posts/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="c6be2278-4e5e-4c21-9d9a-4f9fdf458a5a" name="Default" comment="" />
     <ignored path="nscp.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
