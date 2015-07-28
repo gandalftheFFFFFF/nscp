@@ -21,11 +21,12 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='base_site.html'), name='home'),
+    url(r'^$', TemplateView.as_view(template_name='base.html'), name='home'),
     url(r'^about/$', views.about, name='about'),
     url(r'^news/', include('news_posts.urls')),
-    url(r'^projects/', include('project.urls')),
+    url(r'^portfolio/', include('project.urls')),
     url(r'^cv/$', views.cv, name='cv'),
     url(r'^contact/$', views.contact, name='contact'),
+    url(r'^contact-by-form', views.contact_by_form, name='contact_by_form'),
     url(r'^admin/', include(admin.site.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

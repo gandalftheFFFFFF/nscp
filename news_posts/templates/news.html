@@ -1,6 +1,16 @@
 {% extends 'pages_template.html' %}
 <!-- blocks to fill: main_content -->
-{% block main_content %}
+{% block content %}
+{% block news_menu %}
+<div id="news_menu_container">
+    <div class="news_menu_item">
+        <a href="{% url 'archive' %}">
+            archive
+        </a>
+    </div>
+
+</div>
+{% endblock %}
 {% block news_body %}
 {% if post %}
     <h1>
@@ -27,22 +37,6 @@
         {% endif %}
         </div>
     {% endif %}
-    {% if older_posts %}
-        <h2>
-            recent news
-        </h2>
-        {% for post in older_posts %}
-            <p class="centered_p"><a href="{% url 'specific_post' post.slug %}">{{ post.title }}</a> -
-            {{ post.date|date:"d.m.Y" }}</p>
-        {% endfor %}
-    {% endif %}
-    <h2>
-        <a href="{% url 'archive' %}">news archive</a>
-    </h2>
-{% else %}
-<h2>
-    Nothing to see...
-</h2>
 {% endif %}
 {% endblock %}
 {% endblock %}

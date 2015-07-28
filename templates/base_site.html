@@ -77,7 +77,13 @@
     <div id="contact_container">
         <div id="form_center">
             <h1 class="menu_bait">Contact me!</h1>
-            <form>
+            <form action="niels" method="POST">
+                {% csrf_token %}
+                {% if errors %}
+                    {% for error in errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
                 <p class="form_element">
                     <input class="input_text" type="text" name="name"> Name
                 </p>

@@ -17,14 +17,9 @@ def news(request):
         images = Image.objects.filter(post=post)
     except Image.DoesNotExist:
         images = None
-    try:
-        older_posts = Post.objects.all()[1:4]
-    except Post.DoesNotExist:
-        older_posts = None
     context = {
         'post':post,
         'images':images,
-        'older_posts':older_posts,
     }
     return render(request, template, context)
 

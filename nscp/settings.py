@@ -100,8 +100,8 @@ WSGI_APPLICATION = 'nscp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'nscp',
-        'USER': 'nscp_user',
+        'NAME': get_secret('DATABASE_NAME'),
+        'USER': get_secret('DATABASE_USER'),
         'PASSWORD': get_secret('DATABASE_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '',

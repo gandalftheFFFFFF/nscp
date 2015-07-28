@@ -1,23 +1,75 @@
 {% extends 'pages_template.html' %}
-{% block main_content %}
+{% load staticfiles %}
+{% block content %}
 <h1>
     contact
 </h1>
 <p>
-    Feel free to contact me through any media you like. For shortest response time, please send me
-    an email or use the contact form below. Alternatively, see links to my profiles on various
-    sites below:
+    Feel free to contact me through any of the listed links. For the shortest response time,
+    send me an email or use the contact form below, and I will respond as soon as possible. If
+    you would like to take a look at my CV, you can do it <a href="{% static 'cv.pdf' %}">here</a>.
 </p>
-<p>
-    Email: <a href="mailto:niels@nscp.dk">niels@nscp.dk</a>
-</p>
-<p>
-    Github: <a href="https://github.com/nielspedersen">https://github.com/nielspedersen</a>
-</p>
-<p>
-    LinkedIn: <a href="https://dk.linkedin.com/in/nielsschroderpedersen">https://dk.linkedin.com/in/nielsschroderpedersen</a>
-</p>
-<p>
-    Facebook: <a href="https://www.facebook.com/niels.s.pedersen">https://www.facebook.com/niels.s.pedersen</a>
-</p>
+<table>
+    <tr>
+        <td>
+            <p>Email</p>
+        </td>
+        <td>
+            <a href="mailto:niels@nscp.dk">niels@nscp.dk</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Github</p>
+        </td>
+        <td>
+            <a href="https://github.com/nielspedersen">https://github.com/nielspedersen</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>LinkedIn</p>
+        </td>
+        <td>
+            <a href="https://dk.linkedin.com/in/nielsschroderpedersen">https://dk.linkedin.com/in/nielsschroderpedersen</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Facebook</p>
+        </td>
+        <td>
+            <a href="https://www.facebook.com/niels.s.pedersen">https://www.facebook.com/niels.s.pedersen</a>
+        </td>
+    </tr>
+</table>
+
+<h2>
+    contact form
+</h2>
+
+<div>
+    <div>
+        <form action="niels" method="POST">
+            {% csrf_token %}
+            {% if errors %}
+                {% for error in errors %}
+                    <p class="error_p">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+            <p>
+                <input class="input_text" type="text" name="name" placeholder="Your name"> Name
+            </p>
+            <p>
+                <input class="input_text" type="text" name="email" placeholder="Your email"> Email
+            </p>
+            <p>
+               <textarea class="input_textarea" name="message" placeholder="Your message"></textarea>
+            </p>
+            <p>
+                <input class="input_send" type="submit" value="Send" />
+            </p>
+        </form>
+    </div>
+</div>
 {% endblock %}

@@ -1,0 +1,47 @@
+body {
+    font-family: 'Ubuntu';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans Condensed';
+    font-weight:normal;
+}
+
+/* HEADER */
+
+#header_container {
+    width: 100%;
+}
+
+#menu_container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 100px;
+}
+
+.menu_item {
+    display: inline-block;
+    text-align: justify;
+    vertical-align: middle;
+    font-size: 33px;
+    font-family: 'Open Sans Condensed';
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+#menu_home {
+    font-size: 50px;
+}
+
+#shadow {
+    height: 1vmax;
+    background: linear-gradient(to bottom, #E8E8E8, white);
+}
+
+#content_container {
+    box-shadow: 0 0 1.5vmax #E8E8E8;
+    max-width: 700px;
+    height: 500px;
+    margin: auto;
+}
