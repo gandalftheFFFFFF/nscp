@@ -1,0 +1,38 @@
+{% extends 'projects.html' %}
+{% block projects_menu %}
+<div id="news_menu_container">
+    <div class="project_menu_item">
+        <a href="{% url 'projects' %}">
+            latest
+        </a>
+    </div>
+    <div class="project_menu_item">
+        /
+    </div>
+    <div class="project_menu_item">
+        <a href="https://github.com/nielspedersen/">
+            github
+        </a>
+    </div>
+</div>
+{% endblock %}
+{% block projects_body %}
+    {% if archive %}
+        <h1>archive</h1>
+        {% for month, projects in archive.items %}
+            <h2>{{ month }}</h2>
+            <table class="project_archive_table">
+            {% for project in projects %}
+                <tr>
+                    <td>
+                        {{ project.date_added|date:"D d" }}
+                    </td>
+                    <td>
+                        <a href="{% url 'specific_project' project.slug %}">{{ project.name }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

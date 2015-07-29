@@ -1,12 +1,44 @@
-{% extends 'base_site.html' %}
-{% block main_content %}
+{% extends 'projects.html' %}
+{% block projects_menu %}
+    <div id="news_menu_container">
+        <div class="project_menu_item">
+            <a href="{% url 'projects' %}">
+                latest
+            </a>
+        </div>
+        <div class="project_menu_item">
+            /
+        </div>
+        <div class="project_menu_item">
+            <a href="{% url 'projects_archive' %}">
+                archive
+            </a>
+        </div>
+        <div class="project_menu_item">
+            /
+        </div>
+        <div class="project_menu_item">
+            <a href="https://github.com/nielspedersen/">
+                github
+            </a>
+        </div>
+    </div>
+{% endblock %}
+{% block projects_body %}
 {% if project %}
     <h1 class="site_title">
         Project: {{ project.name }}
     </h1>
+    <p class="project_added">Added {{ project.date_added }}</p>
     <p>
         {{ project.description }}
     </p>
+    {% if project.url %}
+        <p>Link: <a href="{{ project.url }}">{{ project.url }}</a></p>
+    {% endif %}
+    {% if project.git_url %}
+        <p>GitHub: <a href="{{ project.git_url }}">{{ project.git_url }}</a></p>
+    {% endif %}
 {% else %}
     <h1>
         Something went wrong...

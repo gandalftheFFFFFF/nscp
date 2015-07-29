@@ -4,8 +4,15 @@ from .models import Project
 
 class ProjectAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['name', 'url', 'description', 'related_to', 'slug']}),
+        (None, {'fields': ['name',
+                           'url',
+                           'git_url',
+                           'description',
+                           'related_to',
+                           'slug',
+                           ]}),
     ]
+
     prepopulated_fields = {
         'slug': ('name',),
     }

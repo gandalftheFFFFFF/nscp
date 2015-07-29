@@ -1,23 +1,47 @@
 {% extends 'pages_template.html' %}
 {% block content %}
-{% if projects %}
-    <h1>
-        projects
-    </h1>
-    {% for project in projects %}
-        <h2>
-            Project title: {{ project.name }}
-        </h2>
-        <p>
-            Short description: {{ project.description|slice:":180" }}
-            {% if project.description|length > 180 %}
-            ...
-            <a href="{% url 'specific_project' project.slug %}">(read more)</a>{% endif %}
-        </p>
-    {% endfor %}
-{% else %}
-    <h1>
-        No projects...
-    </h1>
-{% endif %}
+    {% block projects_menu %}
+    <div id="news_menu_container">
+        <div class="project_menu_item">
+            <a href="{% url 'projects_archive' %}">
+                archive
+            </a>
+        </div>
+        <div class="project_menu_item">
+            /
+        </div>
+        <div class="project_menu_item">
+            <a href="https://github.com/nielspedersen/">
+                github
+            </a>
+        </div>
+    </div>
+    {% endblock %}
+    {% block projects_body %}
+        {% if projects %}
+            {% for project in projects %}
+                <hr class="project_rule" />
+                <h2>
+                    Project title: <a href="{% url 'specific_project' project.slug %}">{{ project.name }}</a>
+                </h2>
+                <p class="project_added">Added {{ project.date_added }}</p>
+                <p class="short_description">
+                    {{ project.description|slice:":180" }}
+                    {% if project.description|length > 180 %}
+                    ...
+                    <a href="{% url 'specific_project' project.slug %}">(read more)</a>{% endif %}
+                </p>
+                {% if project.url %}
+                <p>Link: <a href="{{ project.url }}">{{ project.url }}</a></p>
+                {% endif %}
+                {% if project.git_url %}
+                <p>GitHub: <a href="{{ project.git_url }}">{{ project.git_url }}</a></p>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <h1>
+                No projects...
+            </h1>
+        {% endif %}
+    {% endblock %}
 {% endblock %}

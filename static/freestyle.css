@@ -251,3 +251,46 @@ a:active {
     .news_menu_item {
         display: inline-block;
     }
+
+/* PORTFOLIO */
+
+    .project_rule {
+        color: #C0C0C0;
+        width: 80%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .short_description {
+        font-style: italic;
+        margin-top: 10px;;
+    }
+
+    .project_added {
+        !margin: 0;
+        font-size: 75%;
+    }
+
+    #project_menu_container {
+        text-align: center;
+        font-family: 'Open sans condensed';
+        font-size: 150%;
+        margin: 0;
+        padding: 0;
+        !border: 1px solid;
+    }
+
+    .project_menu_item {
+        display: inline-block;
+    }
+
+    .project_archive_table {
+        font-weight: 300;
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+
+    .project_archive_table tr td{
+        padding-left: 10px;
+        padding-right: 10px;
+    }

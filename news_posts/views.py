@@ -52,12 +52,6 @@ def archive(request):
                 arch[year].append(post)
             else:
                 arch[year] = [post,]
-        #arc = defaultdict(list)
-        #for post in posts:
-            #year = post.date.year
-            #arc[year].append(post)
-    print(arch)
-
     context = {
         'posts':posts,
         'arc':arch,
