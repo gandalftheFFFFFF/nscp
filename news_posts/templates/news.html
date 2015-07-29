@@ -17,7 +17,7 @@
         {{ post.title }}
     </h1>
     <p>
-        {{ post.date|date:"d.m.Y" }}
+        Published {{ post.date|date:"d.m.Y" }} by Niels
     </p>
     <p>
         {{ post.text }}
@@ -26,13 +26,13 @@
         <div class="picture_container">
         {% if images|length > 1 %}
             {% for image in images %}
-                <a href="{{ MEDIA_URL }}{{ image.img.url }}">
-                    <img class="thumbnail" src="{{ MEDIA_URL }}{{ image.img.url }}" alt="{{ image.name }}" />
+                <a href="{{ image.img.url }}">
+                    <img class="thumbnail" src="{{ image.img.url }}" alt="{{ image.name }}" />
                 </a>
             {% endfor %}
         {% else %}
-            <a href="{{ MEDIA_URL }}{{ images.img.url }}">
-                <img class="preview" src="{{ MEDIA_URL }}{{ images.img.url }}" alt="{{ image.name }}"/>
+            <a href="{{ images.img.url }}">
+                <img class="preview" src="{{ images.img.url }}" alt="{{ image.name }}"/>
             </a>
         {% endif %}
         </div>
