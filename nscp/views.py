@@ -21,11 +21,10 @@ def contact_by_form(request):
         if not request.POST.get('message'):
             errors.append('Pleae enter a message')
         if not errors:
-            send_mail(
-                request.POST['[CONTACT FORM NSCP]'],
+            send_mail('[NSCP CONTACT FORM]',
                 request.POST['message'],
                 request.POST.get('email'),
                 ['niels@nscp.dk'],
             )
-            return render(request, 'contact_thanks.html', None)
+            return render(request, 'contact.html', None)
         return

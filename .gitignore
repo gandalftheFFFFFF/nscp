@@ -2,3 +2,4 @@ nscp/secrets.json
 nscp/media/*
 nscp/local_settings.py
 nscp/db.sqllite3
+nscp/TODO

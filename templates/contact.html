@@ -50,7 +50,7 @@
 
 <div>
     <div>
-        <form action="niels" method="POST">
+        <form action="{% url 'contact_by_form' %}" method="POST">
             {% csrf_token %}
             {% if errors %}
                 {% for error in errors %}
