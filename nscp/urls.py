@@ -29,4 +29,7 @@ urlpatterns = [
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^contact-by-form', views.contact_by_form, name='contact_by_form'),
     url(r'^admin/', include(admin.site.urls)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
