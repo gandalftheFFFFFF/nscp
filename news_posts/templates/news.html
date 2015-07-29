@@ -31,9 +31,11 @@
                 </a>
             {% endfor %}
         {% else %}
-            <a href="{{ images.img.url }}">
-                <img class="preview" src="{{ images.img.url }}" alt="{{ image.name }}"/>
-            </a>
+            {% for image in images %}
+                <a href="{{ image.img.url }}">
+                    <img class="preview" src="{{ image.img.url }}" alt="{{ image.name }}" />
+                </a>
+            {% endfor %}
         {% endif %}
         </div>
     {% endif %}

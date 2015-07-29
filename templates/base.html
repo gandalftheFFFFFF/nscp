@@ -49,11 +49,20 @@
     <div id="main_content">
         {% block content %}
       <h1>Welcome</h1>
-      <h3>To NSCP version 0.3</h3>
+      <h3>To my personal website</h3>
       <p>
           I am <a href="{% static 'cv.pdf' %}">Niels</a>, and I'm a student at the IT-University of Copenhagen.
           I am a developer primarily, but I am also a bachelor of business, and a lover of sports, among other things.
       </p>
+        <p>
+            This site serves as my personal website where I showcase my work and have an opportunity to tell
+            who I am and what I do. You can read <a href="{% url 'about' %}">about</a> me, see my programmin
+            <a href="{% url 'projects' %}">portfolio</a>, read about <a href="{% url 'news' %}">news</a>
+            surrounding me, or <a href="{% url 'contact' %}">contact</a>.
+        </p>
+        <p>
+            Niels
+        </p>
         {% endblock %}
     </div>
   </div>
