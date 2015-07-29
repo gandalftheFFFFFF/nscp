@@ -7,18 +7,20 @@
     {{ post.text }}
 </p>
 {% if images %}
-    <div class="picture_container">
-    {% if images|length > 1 %}
-        {% for image in images %}
-            <a href="{{ MEDIA_URL }}{{ image.img.url }}">
-                <img class="thumbnail" src="{{ MEDIA_URL }}{{ image.img.url }}" alt="{{ image.name }}" />
-            </a>
-        {% endfor %}
-    {% else %}
-        <a href="{{ MEDIA_URL }}{{ images.img.url }}">
-            <img class="preview" src="{{ MEDIA_URL }}{{ images.img.url }}" alt="{{ image.name }}"/>
-        </a>
+        <div class="picture_container">
+        {% if images|length > 1 %}
+            {% for image in images %}
+                <a href="{{ image.img.url }}">
+                    <img class="thumbnail" src="{{ image.img.url }}" alt="{{ image.name }}" />
+                </a>
+            {% endfor %}
+        {% else %}
+            {% for image in images %}
+                <a href="{{ image.img.url }}">
+                    <img class="preview" src="{{ image.img.url }}" alt="{{ image.name }}" />
+                </a>
+            {% endfor %}
+        {% endif %}
+        </div>
     {% endif %}
-    </div>
-{% endif %}
 {% endblock %}
