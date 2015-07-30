@@ -10,8 +10,8 @@ class ProjectAdmin(admin.ModelAdmin):
                            'description',
                            'related_to',
                            'slug',
-                           'date_added',
                            ]}),
+        ('DATE', {'fields': ['date_added']}),
     ]
 
     prepopulated_fields = {
