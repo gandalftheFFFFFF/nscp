@@ -25,7 +25,6 @@ urlpatterns = [
     url(r'^about/$', views.about, name='about'),
     url(r'^news/', include('news_posts.urls')),
     url(r'^portfolio/', include('project.urls')),
-    url(r'^cv/$', views.cv, name='cv'),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^contact-by-form', views.contact_by_form, name='contact_by_form'),
     url(r'^admin/', include(admin.site.urls)),

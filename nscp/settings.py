@@ -142,6 +142,12 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Email settings PRODUCTION
+SERVER_EMAIL = 'niels@nscp.dk'
+DEFAULT_FROM_EMAIL = 'niels@nscp.dk'
+ADMINS = ((u'me', 'niels@nscp.dk'),)
+MANAGERS = ADMINS
+
 try:
     from .local_settings import *
 except ImportError:
