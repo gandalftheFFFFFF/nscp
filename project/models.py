@@ -12,7 +12,7 @@ class Project(models.Model):
     git_url = models.URLField()
     description = models.TextField()
     related_to = models.CharField(max_length=200, choices=RELATED_TO_CHOICES)
-    date_added = models.DateField(auto_now_add=True)
+    date_added = models.DateField()
     slug = models.SlugField()
 
     class Meta:
