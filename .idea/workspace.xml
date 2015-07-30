@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6be2278-4e5e-4c21-9d9a-4f9fdf458a5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/models.py" afterPath="$PROJECT_DIR$/project/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/admin.py" afterPath="$PROJECT_DIR$/project/admin.py" />
     </list>
     <ignored path="nscp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22105263">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.17368421">
+              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -112,7 +121,6 @@
         <option value="$PROJECT_DIR$/project/templates/projects.html" />
         <option value="$PROJECT_DIR$/project/templates/specific_project.html" />
         <option value="$PROJECT_DIR$/news_posts/views.py" />
-        <option value="$PROJECT_DIR$/project/admin.py" />
         <option value="$PROJECT_DIR$/project/templates/projects_archive.html" />
         <option value="$PROJECT_DIR$/static/freestyle.css" />
         <option value="$PROJECT_DIR$/project/views.py" />
@@ -124,6 +132,7 @@
         <option value="$PROJECT_DIR$/nscp/urls.py" />
         <option value="$PROJECT_DIR$/nscp/TODO" />
         <option value="$PROJECT_DIR$/project/models.py" />
+        <option value="$PROJECT_DIR$/project/admin.py" />
       </list>
     </option>
   </component>
@@ -675,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/freestyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08421053">
@@ -787,8 +789,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22105263">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17368421">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
           <folding />
         </state>
       </provider>

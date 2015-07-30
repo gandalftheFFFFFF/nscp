@@ -10,6 +10,7 @@ class ProjectAdmin(admin.ModelAdmin):
                            'description',
                            'related_to',
                            'slug',
+                           'date_added',
                            ]}),
     ]
 
