@@ -45,11 +45,11 @@ def archive(request):
         posts = None
 
     if posts:
-        a = []
+        arc = []
         for post in posts:
-            a.append({'post': post,  'date':post.date})
+            arc.append({'post': post,  'date':post.date})
 
     context = {
-        'archive': a,
+        'archive': arc,
     }
     return render(request, template, context)
