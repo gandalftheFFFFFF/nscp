@@ -1,5 +1,4 @@
 {% extends 'news.html' %}
-{% load staticfiles %}
 {% block news_menu %}
 <div id="news_menu_container">
     <div class="news_menu_item">
@@ -11,16 +10,24 @@
 {% endblock %}
 {% block news_body %}
 
-{% if arc %}
-    {% for year, posts in arc.items %}
-        <h2>{{ year }}</h2>
-        {% for post in posts %}
-            <p>{{ post.date|date:"M d" }} - <a href="{% url 'specific_post' post.slug %}">{{ post.title }}</a><p>
-        {% endfor %}
-    {% endfor %}
-{% else %}
+{% regroup archive|dictsortreversed:"date.year" by date.year as year_list %}
+
+{% for year in year_list %}
+
 <h2>
-    I seem to have run out of news posts. Yikes!
+    {{ year.grouper }}
 </h2>
-{% endif %}
+{% for item in year.list %}
+    <p>
+        {{ item.date|date:"d M" }},
+        <a href="{% url 'specific_post' item.post.slug %}">
+            {{ item.post }}
+        </a>
+    </p>
+{% endfor %}
+
+
+{% endfor %}
+
+
 {% endblock %}

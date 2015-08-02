@@ -45,15 +45,11 @@ def archive(request):
         posts = None
 
     if posts:
-        arch = {}
+        a = []
         for post in posts:
-            year = post.date.year
-            if year in arch:
-                arch[year].append(post)
-            else:
-                arch[year] = [post,]
+            a.append({'post': post,  'date':post.date})
+
     context = {
-        'posts':posts,
-        'arc':arch,
+        'archive': a,
     }
     return render(request, template, context)
