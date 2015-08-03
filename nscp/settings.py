@@ -45,7 +45,7 @@ SECRET_KEY = get_secret('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['46.101.237.155', 'nscp.dk', 'www.nscp.dk']
+ALLOWED_HOSTS = ['127.0.0.1', '46.101.237.155', 'nscp.dk', 'www.nscp.dk']
 
 
 # Application definition
