@@ -60,6 +60,8 @@ INSTALLED_APPS = (
     'news_posts',
     'project',
     'ImageUploader',
+    'preview',
+    'booking',
 )
 
 MIDDLEWARE_CLASSES = (
