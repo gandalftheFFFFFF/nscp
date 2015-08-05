@@ -39,5 +39,6 @@ Where `RELATED_TO_CHOICES` is a list of strings like 'private', 'work', 'school'
 - Insert new 'category' field for projects; java, python, django, scala, etc
 - Add a 'preview' section to the site, to be able to preview smaller apps/projects
 - Include Dojo rich text editor in blog app
+- Improve contact form by using django forms
 
 

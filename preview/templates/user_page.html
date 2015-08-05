@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>
+    Welcome, {{ user }}
+</h1>
+<p>
+    This is a user-specific page that is different from each user.
+</p>
+<h2>
+    Customize
+</h2>
+<p>
+    Here it's possible to expand your user information:
+</p>
+<form action="{% url 'user_page' %}" method="POST">
+    {% csrf_token %}
+    <p>{{ form.email.label_tag }} {{ form.email }}</p>
+    <p>{{ form.first_name.label_tag }} {{ form.first_name }}</p>
+    <p>{{ form.last_name.label_tag }} {{ form.last_name }}</p>
+    <p>{{ form.company.label_tag }} {{ form.company }}</p>
+    <input type="submit" value="Update" />
+</form>
+{% else %}
+
+<h1>
+    Welcome, Anon
+</h1>
+<p>
+    To the user-specific page. Please <a href="{% url 'login' %}">log in</a>
+    or <a href="{% url 'create_user' %}">create a user</a>.
+</p>
+
+{% endif %}
+
+{% endblock %}

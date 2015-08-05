@@ -6,7 +6,7 @@
 
 {% if user.is_authenticated %}
 <p>
-    You are already logged in as: {{ user }}
+    You are logged in as: '{{ user }}'. Click <a href="{% url 'logout' %}">here if this is not you.</a>
 </p>
 {% else %}
 
@@ -19,6 +19,10 @@
         <p>{{ form.password.label_tag }} {{ form.password }}</p>
         <input type="submit" value="Log in" />
     </form>
+
+    <p>
+        Or create a new user <a href="{% url 'create_user' %}">here</a>.
+    </p>
 
 {% endif %}
 

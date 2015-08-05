@@ -202,7 +202,12 @@ a:active {
         color: #A80000;
     }
 
+    .input_text {
+        padding: 10px;
+    }
+
     .input_textarea {
+        padding: 10px;
         width: 98%;
         height: 80px;
         line-height: 150%;

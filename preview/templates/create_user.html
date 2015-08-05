@@ -5,11 +5,28 @@
 <p>
     You are already logged in as user '{{ request.user }}'.
 </p>
+<p>
+    Click <a href="{% url 'logout' %}">here to log out</a>
+</p>
 {% else %}
 
-<p>
+{% if error %}
+    <p>{{ error }}</p>
+{% endif %}
 
-</p>
+<form action="{% url 'create_user' %}" method="POST">
+    {% csrf_token %}
+    <p>
+        {{ form.username.label_tag }} {{ form.username }}
+    </p>
+    <p>
+        {{ form.password.label_tag }} {{ form.password }}
+    </p>
+    <p>
+        {{ form.password_validation.label_tag }} {{ form.password_validation }}
+    </p>
+    <input type="submit" value="Create" />
+</form>
 
 {% endif %}
 

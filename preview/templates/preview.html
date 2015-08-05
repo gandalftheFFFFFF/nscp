@@ -2,20 +2,20 @@
 {% block content %}
 <h1>Previews</h1>
 <p>
-    This part of the website is a portal to small previews of features. Click, for example
-    , on the booking system preview and try it out!
+    For now, this page previews a log in system and a user-specific page. Will be expanded in the future!
 </p>
 
-<h2>
-    Links to previews goes here:
-</h2>
 {% if request.user.is_authenticated %}
-<p>
-    You are logged in as user '{{ request.user }}'.
-</p>
-{% else %}
-<p>
-    Please <a href="{% url 'login' %}">log in</a> to use this section.
+    <p>
+        You are logged in as user '{{ request.user }}'. Go to your <a href="{% url 'user_page' %}">user page.</a>
+    </p>
+    <p>
+        Click <a href="{% url 'logout' %}">here</a> to log out
+    </p>
+    {% else %}
+    <p>
+        Please <a href="{% url 'login' %}">log in</a> to use this section, or
+        <a href="{% url 'create_user' %}">create a new user</a>.
 </p>
 {% endif %}
 
