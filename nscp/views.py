@@ -1,7 +1,20 @@
 __author__ = 'niels'
 from django.shortcuts import render
 from django.core.mail import send_mail
+from news_posts.models import Post
 
+
+def index(request):
+    try:
+        post = Post.objects.latest('date')
+    except Post.DoesNotExist:
+        post = None
+
+    context = {
+        'post': post,
+    }
+
+    return render(request, 'base.html', context)
 
 def about(request):
     return render(request, 'about.html', context=None)

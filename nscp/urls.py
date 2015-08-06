@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='base.html'), name='home'),
+    url(r'^$', views.index, name='home'),
     url(r'^about/$', views.about, name='about'),
     url(r'^news/', include('news_posts.urls')),
     url(r'^portfolio/', include('project.urls')),

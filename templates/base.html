@@ -63,6 +63,25 @@
         <p>
             Niels
         </p>
+
+        {% if post %}
+
+        <h1>
+          Recent news:
+        </h1>
+
+        <h2>
+          {{ post.title }}
+        </h2>
+      <p>
+        Published {{ post.date|date:"d.m.Y" }}
+      </p>
+
+        <p>
+          {{ post.text }}
+        </p>
+
+        {% endif %}
         {% endblock %}
     </div>
   </div>
